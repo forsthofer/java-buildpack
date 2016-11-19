@@ -32,6 +32,10 @@ module JavaBuildpack
         super(context)
         @spring_boot_utils = JavaBuildpack::Util::SpringBootUtils.new
       end
+      
+      def detect
+         nil
+      end
 
       # (see JavaBuildpack::Container::DistZipLike#release)
       def release

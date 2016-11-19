@@ -37,6 +37,10 @@ module JavaBuildpack
         @logger = JavaBuildpack::Logging::LoggerFactory.instance.get_logger SpringBootCLI
         super(context)
       end
+      
+      def detect
+             nil
+      end
 
       # (see JavaBuildpack::Component::BaseComponent#compile)
       def compile
