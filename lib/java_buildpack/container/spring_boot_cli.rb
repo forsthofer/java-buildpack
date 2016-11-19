@@ -63,8 +63,9 @@ module JavaBuildpack
 
       # (see JavaBuildpack::Component::VersionedDependencyComponent#supports?)
       def supports?
-        gf = JavaBuildpack::Util::GroovyUtils.groovy_files(@application).reject { |file| logback_file? file }
-        !gf.empty? && all_pogo_or_configuration(gf) && no_main_method(gf) && no_shebang(gf) && !web_inf?
+        false
+        #gf = JavaBuildpack::Util::GroovyUtils.groovy_files(@application).reject { |file| logback_file? file }
+        #!gf.empty? && all_pogo_or_configuration(gf) && no_main_method(gf) && no_shebang(gf) && !web_inf?
       end
 
       private
