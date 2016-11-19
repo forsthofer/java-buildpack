@@ -33,10 +33,6 @@ module JavaBuildpack
     class Tomcat < JavaBuildpack::Component::ModularComponent
 
       protected
-      
-      def detect
-               nil
-      end
 
       # (see JavaBuildpack::Component::ModularComponent#command)
       def command

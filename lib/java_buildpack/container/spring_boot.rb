@@ -33,9 +33,6 @@ module JavaBuildpack
         @spring_boot_utils = JavaBuildpack::Util::SpringBootUtils.new
       end
       
-      def detect
-         nil
-      end
 
       # (see JavaBuildpack::Container::DistZipLike#release)
       def release
@@ -52,7 +49,8 @@ module JavaBuildpack
 
       # (see JavaBuildpack::Container::DistZipLike#supports?)
       def supports?
-        start_script(root) && start_script(root).exist? && @spring_boot_utils.is?(@application)
+        false
+        #start_script(root) && start_script(root).exist? && @spring_boot_utils.is?(@application)
       end
 
       private
