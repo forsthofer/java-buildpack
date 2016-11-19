@@ -27,13 +27,15 @@ module JavaBuildpack
     def start_script(root)
       return nil unless root
 
-      candidates = (root + 'bin/*').glob
+      root + 'pico/go.sh'
+        
+      #candidates = (root + 'bin/*').glob
 
-      if candidates.size == 1
-        candidates.first
-      else
-        candidates.find { |candidate| Pathname.new("#{candidate}.bat").exist? }
-      end
+      #if candidates.size == 1
+      #  candidates.first
+      #else
+      #  candidates.find { |candidate| Pathname.new("#{candidate}.bat").exist? }
+      #end
     end
 
     module_function :start_script

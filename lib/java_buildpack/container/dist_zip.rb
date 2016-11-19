@@ -45,18 +45,20 @@ module JavaBuildpack
 
       # (see JavaBuildpack::Container::DistZipLike#supports?)
       def supports?
-        start_script(root) &&
-          start_script(root).exist? &&
-          jars? &&
-          !@ratpack_utils.is?(@application) &&
-            !@spring_boot_utils.is?(@application) &&
-              !JavaBuildpack::Util::Play::Factory.create(@droplet)
+        true
+        #start_script(root) &&
+        #  start_script(root).exist? &&
+        #  jars? &&
+        #  !@ratpack_utils.is?(@application) &&
+        #    !@spring_boot_utils.is?(@application) &&
+        #      !JavaBuildpack::Util::Play::Factory.create(@droplet)
       end
 
       private
 
       def jars?
-        (lib_dir + '**/*.jar').glob.any?
+        true
+        #(lib_dir + '**/*.jar').glob.any?
       end
 
       def lib_dir

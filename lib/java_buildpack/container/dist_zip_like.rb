@@ -40,6 +40,8 @@ module JavaBuildpack
 
       # (see JavaBuildpack::Component::BaseComponent#release)
       def release
+        @droplet.java_opts.add_system_property KEY_HTTP_PORT, '$PORT'
+
         [
           @droplet.environment_variables.as_env_vars,
           @droplet.java_home.as_env_var,
@@ -74,6 +76,8 @@ module JavaBuildpack
 
       private
 
+      KEY_HTTP_PORT = 'http.port'.freeze
+      
       PATTERN_APP_CLASSPATH = /^declare -r app_classpath=\"(.*)\"$/
 
       PATTERN_CLASSPATH = /^CLASSPATH=(.*)$/
