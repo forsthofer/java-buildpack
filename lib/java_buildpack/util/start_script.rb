@@ -27,7 +27,7 @@ module JavaBuildpack
     def start_script(root)
       return nil unless root
 
-      root + '/go.sh'
+      root + 'go.sh'
         
       #candidates = (root + 'bin/*').glob
 
