@@ -35,8 +35,7 @@ module JavaBuildpack
       # (see JavaBuildpack::Component::BaseComponent#compile)
       def compile
         start_script(root).chmod 0o755
-        (root + 'plugins/org.eclipse.osgi_3.11.0.v20160603-1336.jar').chmod 0o755
-        augment_classpath_content
+        #augment_classpath_content
       end
 
       # (see JavaBuildpack::Component::BaseComponent#release)
